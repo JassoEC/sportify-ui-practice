@@ -1,15 +1,21 @@
 import {createStackNavigator} from '@react-navigation/stack';
-import {LoginScreen} from '../screens';
 
-const Stack = createStackNavigator();
+import {HomeScreen, SignInScreen, SignUpScreen} from '../screens';
+
+export type SportifyStackParamList = {
+  Home: undefined;
+  SignUp: undefined;
+  SignIn: undefined;
+};
+
+const Stack = createStackNavigator<SportifyStackParamList>();
 
 export const SportifyStackNavigator = () => {
   return (
     <Stack.Navigator screenOptions={{headerShown: false}}>
-      <Stack.Screen name="Home" component={LoginScreen} />
-      {/* <Stack.Screen name="Notifications" component={Notifications} />
-      <Stack.Screen name="Profile" component={Profile} />
-      <Stack.Screen name="Settings" component={Settings} /> */}
+      <Stack.Screen name="Home" component={HomeScreen} />
+      <Stack.Screen name="SignUp" component={SignUpScreen} />
+      <Stack.Screen name="SignIn" component={SignInScreen} />
     </Stack.Navigator>
   );
 };

@@ -1,21 +1,21 @@
 import {StyleSheet} from 'react-native';
 
-export const appColors = {
-  smoke: '#FAFAFA',
-  black: '#150000',
-  pinkMaybe: '#FF5050',
+export enum APP_COLORS {
+  smoke = '#FAFAFA',
+  black = '#150000',
+  pinkMaybe = '#FF5050',
 
-  fullWhite: '#FFF',
-  gray100: '#D6D5D5',
-  gray200: '#ADABAB',
-  gray300: '#848181',
-  gray400: '#5B5757',
-  gray500: '#322D2D',
-};
+  gray10 = '#FFF',
+  gray15 = '#F4F4F4',
+  gray20 = '#D6D5D5',
+  gray40 = '#ADABAB',
+  gray60 = '#848181',
+  gray80 = '#5B5757',
+  gray100 = '#322D2D',
+}
 
-export const appStyles = StyleSheet.create({
-  primaryButton: {
-    backgroundColor: appColors.pinkMaybe,
+export const APP_STYLES = StyleSheet.create({
+  button: {
     padding: 10,
     alignItems: 'center',
   },
@@ -24,6 +24,9 @@ export const appStyles = StyleSheet.create({
   },
   appFontMarope: {
     fontFamily: 'Manrope-Regular',
+  },
+  globalPadding: {
+    padding: 20,
   },
   mainContainer: {
     flex: 1,

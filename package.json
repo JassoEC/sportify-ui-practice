@@ -11,6 +11,7 @@
     "start:ios": "npm run ios -- --simulator='iPhone 15 Pro Max'"
   },
   "dependencies": {
+    "@react-native-community/checkbox": "^0.5.17",
     "@react-native-masked-view/masked-view": "^0.3.1",
     "@react-navigation/bottom-tabs": "^6.5.20",
     "@react-navigation/native": "^6.1.17",

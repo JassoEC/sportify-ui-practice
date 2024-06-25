@@ -1,23 +1,24 @@
 import {PropsWithChildren} from 'react';
 import {StyleProp, View, ViewStyle} from 'react-native';
 
-import {appStyles} from '../../../config';
+import {APP_STYLES} from '../../../config';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
 
 interface Props extends PropsWithChildren {
   style: StyleProp<ViewStyle>;
+  safeArea?: boolean;
 }
 
-export const MainContainer = ({children, style}: Props) => {
+export const MainContainer = ({children, style, safeArea}: Props) => {
   const {top, bottom} = useSafeAreaInsets();
 
   return (
     <View
       style={[
-        appStyles.mainContainer,
+        APP_STYLES.mainContainer,
         {
-          marginTop: top,
-          marginBottom: bottom,
+          marginTop: safeArea ? top : 0,
+          marginBottom: safeArea ? bottom : 0,
         },
         style,
       ]}>

@@ -1,34 +1,25 @@
 import {Pressable, StyleProp, Text, View, ViewStyle} from 'react-native';
-
-import {appColors, appStyles} from '../../../config';
+import {APP_COLORS, APP_STYLES} from '../../../config';
 
 interface Props {
   text: string;
-  backgroundColor?: 'black' | 'pink' | 'gray100';
   capitalize?: boolean;
   onPress?: () => void;
   style?: StyleProp<ViewStyle>;
+  backgroundColor?: keyof typeof APP_COLORS;
+  color?: keyof typeof APP_COLORS;
+  opacityBackground?: keyof typeof APP_COLORS;
 }
 
-export const Button = ({
-  text,
-  backgroundColor,
+export const BaseButton = ({
   onPress,
-  capitalize = true,
+  text,
   style,
+  capitalize,
+  backgroundColor = 'black',
+  color = 'black',
+  opacityBackground = 'black',
 }: Props) => {
-  const getBackgroundColor = () => {
-    switch (backgroundColor) {
-      case 'black':
-        return appColors.black;
-      case 'pink':
-        return appColors.pinkMaybe;
-      case 'gray100':
-      default:
-        return appColors.gray100;
-    }
-  };
-
   const handleOnPress = () => {
     if (!onPress) return;
     onPress();
@@ -55,16 +46,16 @@ export const Button = ({
             borderBottomWidth: 25,
             borderTopColor: 'transparent',
             borderLeftColor: 'transparent',
-            borderRightColor: getBackgroundColor(),
+            borderRightColor: APP_COLORS[backgroundColor],
             borderBottomColor: 'transparent',
           },
         ]}
       />
       <View
         style={[
-          appStyles.primaryButton,
+          APP_STYLES.button,
           {
-            backgroundColor: getBackgroundColor(),
+            backgroundColor: APP_COLORS[backgroundColor],
             height: 50,
             flex: 1,
             justifyContent: 'center',
@@ -73,11 +64,11 @@ export const Button = ({
         <Text
           style={[
             {
-              color: backgroundColor === 'pink' ? 'white' : 'black',
+              color: APP_COLORS[color],
               fontSize: 20,
               textTransform: capitalize ? 'uppercase' : 'none',
             },
-            appStyles.appFontBebasNeue,
+            APP_STYLES.appFontBebasNeue,
           ]}>
           {text}
         </Text>
@@ -90,7 +81,7 @@ export const Button = ({
           borderTopWidth: 25,
           borderBottomWidth: 25,
           borderTopColor: 'transparent',
-          borderLeftColor: getBackgroundColor(),
+          borderLeftColor: APP_COLORS[backgroundColor],
           borderRightColor: 'transparent',
           borderBottomColor: 'transparent',
         }}
