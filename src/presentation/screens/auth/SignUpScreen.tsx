@@ -1,6 +1,6 @@
 import {View} from 'react-native';
-
 import MaterialIcon from 'react-native-vector-icons/MaterialIcons';
+import {NavigationProp, useNavigation} from '@react-navigation/native';
 
 import {
   AppTextInput,
@@ -9,10 +9,13 @@ import {
   ScreenWrapper,
 } from '../../components';
 import {APP_COLORS} from '../../../config';
+import {SportifyStackParamList} from '../../navigation';
 
 interface Props {}
 
 export const SignUpScreen = ({}: Props) => {
+  const navigation = useNavigation<NavigationProp<SportifyStackParamList>>();
+
   return (
     <ScreenWrapper
       textHeader="Create your Sportify Id"
@@ -47,7 +50,10 @@ export const SignUpScreen = ({}: Props) => {
         />
       </View>
 
-      <BlackButton text="Create Account" />
+      <BlackButton
+        text="Create Account"
+        onPress={() => navigation.navigate('App')}
+      />
       <ManropeText
         text={
           'By agreeing to the above terms, you are consenting that your personal information will be collected, stored, and processed in the United States and the European Union on behalf of Sporify Properties, Inc.'
