@@ -12,7 +12,7 @@ import {ProfileStackParamList} from '../../navigation';
 
 interface Props {}
 
-export const MainProfileScreen = ({}: Props) => {
+export const ProfileScreen = ({}: Props) => {
   const navigation = useNavigation<NavigationProp<ProfileStackParamList>>();
 
   return (
@@ -24,7 +24,7 @@ export const MainProfileScreen = ({}: Props) => {
       }}
       additionalHeaderContent={
         <SmallButton
-          text="Sig in or join"
+          text="Sign in or join"
           color="gray10"
           style={{
             marginTop: 25,
@@ -53,6 +53,7 @@ export const MainProfileScreen = ({}: Props) => {
           text="Notifications"
           fontSize={20}
           style={{marginBottom: 30}}
+          onPress={() => navigation.navigate('Notifications')}
         />
         <ProfileButton
           text="Privacy"

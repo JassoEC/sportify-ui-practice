@@ -19,7 +19,7 @@ export const OnboardingScreen = ({}: Props) => {
     <>
       <Image
         source={require('../../assets/images/auth/login/garota-1-2048x2048.png')}
-        style={{width: '100%', position: 'absolute', top: '5%'}}
+        style={{width: '100%', position: 'absolute'}}
       />
 
       <Image
