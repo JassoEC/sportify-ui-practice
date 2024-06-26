@@ -13,7 +13,7 @@ export type SportifyStackParamList = {
 
 const Stack = createStackNavigator<SportifyStackParamList>();
 
-export const SportifyStackNavigator = () => {
+export const AuthStackNavigation = () => {
   return (
     <Stack.Navigator screenOptions={{headerShown: false}}>
       <Stack.Screen name="Onboarding" component={OnboardingScreen} />

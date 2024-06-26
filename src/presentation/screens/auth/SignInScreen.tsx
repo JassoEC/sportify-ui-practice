@@ -6,7 +6,7 @@ import {
   BlackButton,
   GrayButton,
   ManropeText,
-  ScreenWrapper,
+  WithHeaderScreenWrapper,
 } from '../../components';
 import {SportifyStackParamList} from '../../navigation';
 
@@ -20,9 +20,9 @@ export const SignInScreen = ({}: Props) => {
   };
 
   return (
-    <ScreenWrapper
+    <WithHeaderScreenWrapper
       textHeader="SIGN IN WITH YOUR SPORTIFY ID"
-      backgroundText="Sign IN">
+      backgroundText="SignIN">
       <AppTextInput placeholder="Email" keyboardType="email-address" />
       <AppTextInput placeholder="Password" secureEntry />
 
@@ -53,6 +53,6 @@ export const SignInScreen = ({}: Props) => {
         text="sign up"
         onPress={() => navigation.navigate('SignUp')}
       />
-    </ScreenWrapper>
+    </WithHeaderScreenWrapper>
   );
 };

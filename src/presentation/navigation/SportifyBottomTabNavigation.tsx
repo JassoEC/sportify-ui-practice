@@ -1,14 +1,63 @@
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+import {Text, View} from 'react-native';
 
-import {HomeScreen} from '../components';
+import {BottomTabBarIcon} from '../components';
+import {ProfileStackNavigation} from './ProfileStackNavigation';
 
 const Tab = createBottomTabNavigator();
 
+const SampleScreen = () => {
+  return (
+    <View>
+      <Text>SampleScreen</Text>
+    </View>
+  );
+};
+
 export const SportifyBottomTabsNavigation = () => {
   return (
-    <Tab.Navigator>
-      <Tab.Screen name="Home" component={HomeScreen} />
-      {/* <Tab.Screen name="Settings" component={SettingsScreen} /> */}
+    <Tab.Navigator
+      initialRouteName="ProfileSection"
+      screenOptions={{
+        headerShown: false,
+        tabBarShowLabel: false,
+      }}>
+      <Tab.Screen
+        name="News"
+        component={SampleScreen}
+        options={{
+          tabBarIcon: ({focused}) => (
+            <BottomTabBarIcon icon="home" focused={focused} />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="Home"
+        component={SampleScreen}
+        options={{
+          tabBarIcon: ({focused}) => (
+            <BottomTabBarIcon icon="sticky-note-2" focused={focused} />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="Highlights"
+        component={SampleScreen}
+        options={{
+          tabBarIcon: ({focused}) => (
+            <BottomTabBarIcon icon="video-library" focused={focused} />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="ProfileSection"
+        component={ProfileStackNavigation}
+        options={{
+          tabBarIcon: ({focused}) => (
+            <BottomTabBarIcon icon="person" focused={focused} />
+          ),
+        }}
+      />
     </Tab.Navigator>
   );
 };

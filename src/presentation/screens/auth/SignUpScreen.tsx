@@ -6,7 +6,7 @@ import {
   AppTextInput,
   BlackButton,
   ManropeText,
-  ScreenWrapper,
+  WithHeaderScreenWrapper,
 } from '../../components';
 import {APP_COLORS} from '../../../config';
 import {SportifyStackParamList} from '../../navigation';
@@ -17,7 +17,7 @@ export const SignUpScreen = ({}: Props) => {
   const navigation = useNavigation<NavigationProp<SportifyStackParamList>>();
 
   return (
-    <ScreenWrapper
+    <WithHeaderScreenWrapper
       textHeader="Create your Sportify Id"
       textSubHeader="Get news,game updates highlights and more info on your favorite teams"
       backgroundText="JOIN">
@@ -60,6 +60,6 @@ export const SignUpScreen = ({}: Props) => {
         }
         style={{marginVertical: 25}}
       />
-    </ScreenWrapper>
+    </WithHeaderScreenWrapper>
   );
 };

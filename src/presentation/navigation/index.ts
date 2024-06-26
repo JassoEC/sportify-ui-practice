@@ -1,2 +1,4 @@
 export * from './CustomBottomTabsNavigation';
-export * from './SportifyStackNavigation';
+export * from './AuthStackNavigation';
+
+export * from './ProfileStackNavigation';
