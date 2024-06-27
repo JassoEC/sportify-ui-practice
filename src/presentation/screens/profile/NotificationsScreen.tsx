@@ -68,7 +68,7 @@ export const NotificationsScreen = ({}: Props) => {
             <MaterialIcon
               icon={selected ? 'toggle-on' : 'toggle-off'}
               size={35}
-              color={selected ? 'pinkMaybe' : undefined}
+              color={selected ? 'pinkMaybe' : 'gray60'}
             />
           </Pressable>
         </View>
@@ -82,10 +82,12 @@ export const NotificationsScreen = ({}: Props) => {
           mainText="Premier League"
           secondaryText="Breaking news, editors picks, benefits & Rewards"
           imagePath={require('../../../assets/images/teams/premiere-lion.png')}
+          disabled={!selected}
         />
         <NotificationItem
           mainText="GAMES & STATS"
           imagePath={require('../../../assets/images/teams/premiere-lion.png')}
+          disabled={!selected}
         />
 
         <BebasNeueText
@@ -99,6 +101,7 @@ export const NotificationsScreen = ({}: Props) => {
             key={index}
             mainText={team.name}
             imagePath={team.image}
+            disabled={!selected}
           />
         ))}
       </ScrollView>
