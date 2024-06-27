@@ -22,7 +22,7 @@ export const AppTextInput = ({
   keyboardType = 'default',
   style,
   color = 'gray80',
-  backgroundColor = 'gray15',
+  backgroundColor = 'gray30',
 }: Props) => {
   return (
     <TextInput
