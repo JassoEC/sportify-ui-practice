@@ -21,5 +21,10 @@ export * from './ui/EvilIcon';
 
 export * from './navigation/BottomTabBarIcon';
 export * from './navigation/CustomTabBar';
+export * from './navigation/SportifyTabBarButton';
 
 export * from './dashboard/DashboardCarousel';
+export * from './dashboard/CategoryButton';
+export * from './dashboard/CarouselItem';
+export * from './dashboard/LeagueCarouselItem';
+export * from './dashboard/ImageCarouselItem';

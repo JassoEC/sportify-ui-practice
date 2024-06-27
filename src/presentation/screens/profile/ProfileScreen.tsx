@@ -21,6 +21,7 @@ export const ProfileScreen = ({}: Props) => {
       textSubHeader="Your  Sportify ID grants you access to the exclusive offers, personalized content, and more- so you can keep being one of the best fans out there."
       style={{
         height: 339,
+        paddingBottom: 20,
       }}
       additionalHeaderContent={
         <SmallButton

@@ -21,7 +21,7 @@ export const ManropeText = ({
           fontSize,
           color: APP_COLORS[color],
         },
-        APP_STYLES.appFontMarope,
+        APP_STYLES.appFontManrope,
         style,
       ]}>
       {text}

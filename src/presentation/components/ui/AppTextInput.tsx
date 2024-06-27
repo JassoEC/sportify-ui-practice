@@ -21,8 +21,8 @@ export const AppTextInput = ({
   secureEntry = false,
   keyboardType = 'default',
   style,
-  color = 'gray80',
-  backgroundColor = 'gray30',
+  color = 'gray60',
+  backgroundColor = 'gray15',
 }: Props) => {
   return (
     <TextInput

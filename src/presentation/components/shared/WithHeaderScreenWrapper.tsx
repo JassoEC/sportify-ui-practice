@@ -24,6 +24,8 @@ interface Props extends PropsWithChildren {
   additionalHeaderContent?: ReactNode;
   style?: StyleProp<ViewStyle>;
   contentPadding?: boolean;
+  textHeaderFontSize?: number;
+  textSubHeaderFontSize?: number;
 }
 
 export const WithHeaderScreenWrapper = ({
@@ -35,6 +37,8 @@ export const WithHeaderScreenWrapper = ({
   showBackButton,
   style,
   contentPadding = true,
+  textHeaderFontSize = 28,
+  textSubHeaderFontSize = 14,
 }: Props) => {
   const {top} = useSafeAreaInsets();
 
@@ -70,34 +74,33 @@ export const WithHeaderScreenWrapper = ({
           </Pressable>
         )}
 
+        {/* Text header */}
         <BebasNeueText
           text={textHeader}
-          fontSize={24}
+          fontSize={textHeaderFontSize}
           color="gray10"
-          style={{
-            marginBottom: 10,
-            textTransform: 'uppercase',
-            maxWidth: '40%',
-          }}
+          style={styles.textHeader}
         />
 
+        {/* Text subheader */}
         {textSubHeader && (
           <ManropeText
             text={textSubHeader}
             style={[styles.textSubHeader]}
             color="gray10"
-            fontSize={14}
+            fontSize={textSubHeaderFontSize}
           />
         )}
 
         {additionalHeaderContent && additionalHeaderContent}
 
+        {/* Background text */}
         {backgroundText && (
           <BebasNeueText
             text={backgroundText}
-            fontSize={144}
+            fontSize={128}
             color="gray10"
-            style={[styles.backgroundText, {maxWidth: '75%'}]}
+            style={[styles.backgroundText]}
           />
         )}
 
@@ -114,7 +117,7 @@ export const WithHeaderScreenWrapper = ({
           />
         )}
       </View>
-      <View style={[contentPadding ? APP_STYLES.globalPadding : null]}>
+      <View style={[contentPadding ? styles.contentContainer : null]}>
         {children}
       </View>
     </View>
@@ -125,8 +128,7 @@ const styles = StyleSheet.create({
   headerContainer: {
     backgroundColor: APP_COLORS.pinkMaybe,
     height: 246,
-    width: '100%',
-    padding: 20,
+    ...APP_STYLES.globalHorizontalPadding,
     justifyContent: 'flex-end',
   },
   logo: {
@@ -136,16 +138,24 @@ const styles = StyleSheet.create({
   },
   contentContainer: {
     flex: 1,
-    padding: 20,
     backgroundColor: APP_COLORS.smoke,
+    ...APP_STYLES.globalHorizontalPadding,
+    paddingVertical: 20,
+  },
+  textHeader: {
+    marginBottom: 10,
+    textTransform: 'uppercase',
+    maxWidth: '60%',
   },
   textSubHeader: {
     fontWeight: '300',
-    maxWidth: '70%',
+    maxWidth: '80%',
   },
   backgroundText: {
     opacity: 0.1,
     position: 'absolute',
+    letterSpacing: 0,
     right: 0,
+    top: '30%',
   },
 });

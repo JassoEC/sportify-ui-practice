@@ -1,14 +1,15 @@
-import {Image, ScrollView, Text, View} from 'react-native';
+import {ScrollView, StyleSheet, View} from 'react-native';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
 
 import {
   AppTextInput,
-  BebasNeueText,
+  CarouselItem,
+  CategoryButton,
   ColorizedLogo,
   DashboardCarousel,
-  ManropeText,
+  ImageCarouselItem,
+  LeagueCarouselItem,
   MaterialIcon,
-  SmallButton,
 } from '../../components';
 import {APP_COLORS, APP_STYLES} from '../../../config';
 
@@ -17,42 +18,19 @@ interface Props {}
 export const DashboardHomeScreen = ({}: Props) => {
   const {top} = useSafeAreaInsets();
   return (
-    <ScrollView
-      style={{
-        backgroundColor: APP_COLORS.smoke,
-      }}>
-      <View
-        style={[
-          APP_STYLES.globalPadding,
-          {
-            marginTop: top,
-            flexDirection: 'row',
-            justifyContent: 'space-between',
-            alignItems: 'center',
-            paddingBottom: 0,
-          },
-        ]}>
+    <ScrollView style={styles.mainContainer}>
+      <View style={{...styles.headerWrapper, marginTop: top}}>
         <ColorizedLogo />
         <MaterialIcon icon="notifications" size={30} color="black" />
       </View>
-      <View
-        style={[APP_STYLES.globalPadding, {paddingVertical: 0, marginTop: 10}]}>
-        <View
-          style={[
-            {
-              flexDirection: 'row',
-              alignItems: 'center',
-              alignContent: 'center',
-              paddingHorizontal: 20,
-              backgroundColor: APP_COLORS.gray15,
-            },
-          ]}>
+      <View style={styles.searchWrapper}>
+        <View style={styles.searchInputContainer}>
           <MaterialIcon icon="search" size={25} color="gray60" />
           <AppTextInput
             placeholder="Team,sport or venue"
             padding={0}
             marginBottom={0}
-            style={[{backgroundColor: APP_COLORS.gray15, marginStart: 20}]}
+            style={styles.searchInput}
           />
         </View>
       </View>
@@ -60,262 +38,98 @@ export const DashboardHomeScreen = ({}: Props) => {
         horizontal
         showsHorizontalScrollIndicator={false}
         style={{
-          marginTop: 20,
+          marginVertical: 20,
         }}>
-        <SmallButton
-          text="🔥 Trending"
-          color="gray10"
-          fontSize={14}
-          height={40}
-          backgroundColor="black"
-          style={{marginHorizontal: 5}}
-        />
-        <SmallButton
-          text="⚽ Football"
-          color="black"
-          fontSize={14}
-          height={40}
-          backgroundColor="gray15"
-          style={{marginHorizontal: 5}}
-        />
-        <SmallButton
-          text="🏀 Basketball"
-          color="black"
-          fontSize={14}
-          height={40}
-          backgroundColor="gray15"
-          style={{marginHorizontal: 5}}
-        />
-        <SmallButton
-          text="🏈 American Football"
-          color="black"
-          fontSize={14}
-          height={40}
-          backgroundColor="gray15"
-          style={{marginHorizontal: 5}}
-        />
+        <CategoryButton text="🔥 Trending" selected />
+        <CategoryButton text="⚽ Football" />
+        <CategoryButton text="🏀 Basketball" />
+        <CategoryButton text="🏈 American Football" />
       </ScrollView>
       <DashboardCarousel>
-        <Image
-          source={require('../../../assets/images/dashboard/01.png')}
-          resizeMode="contain"
+        <ImageCarouselItem
+          imagePath={require('../../../assets/images/dashboard/01.png')}
+        />
+        <ImageCarouselItem
+          imagePath={require('../../../assets/images/dashboard/01.png')}
+        />
+        <ImageCarouselItem
+          imagePath={require('../../../assets/images/dashboard/01.png')}
+          addMarginEnd
         />
       </DashboardCarousel>
       <DashboardCarousel title="Fifa World Cup" linkText="View all">
-        <View
-          style={{
-            backgroundColor: 'white',
-            flexDirection: 'row',
-            padding: 10,
-          }}>
-          <Image
-            source={require('../../../assets/images/dashboard/thumb-01.png')}
-          />
-          <View style={{padding: 10, marginStart: 5}}>
-            <ManropeText
-              text="Highlights"
-              fontSize={12}
-              style={{
-                backgroundColor: APP_COLORS.gray15,
-                padding: 4,
-                paddingHorizontal: 6,
-                width: 70,
-                marginBottom: 2,
-              }}
-            />
-            <BebasNeueText text="Brazil vs Argentina" fontSize={18} />
-            <ManropeText
-              text="Watch the highlights from the match between..."
-              fontSize={12}
-              style={{color: APP_COLORS.gray60, width: 150}}
-            />
-          </View>
-        </View>
-        <View
-          style={{
-            backgroundColor: 'white',
-            flexDirection: 'row',
-            padding: 10,
-          }}>
-          <Image
-            source={require('../../../assets/images/dashboard/thumb-01.png')}
-          />
-          <View style={{padding: 10, marginStart: 5}}>
-            <ManropeText
-              text="Highlights"
-              fontSize={12}
-              style={{
-                backgroundColor: APP_COLORS.gray15,
-                padding: 4,
-                paddingHorizontal: 6,
-                width: 70,
-                marginBottom: 2,
-              }}
-            />
-            <BebasNeueText text="Brazil vs Argentina" fontSize={18} />
-            <ManropeText
-              text="Watch the highlights from the match between..."
-              fontSize={12}
-              style={{color: APP_COLORS.gray60, width: 150}}
-            />
-          </View>
-        </View>
+        <CarouselItem
+          imagePath={require('../../../assets/images/dashboard/thumb-01.png')}
+          title="Brazil vs Argentina"
+          text="Watch the highlights from the match between..."
+        />
+        <CarouselItem
+          imagePath={require('../../../assets/images/dashboard/thumb-01.png')}
+          title="Brazil vs Argentina"
+          text="Watch the highlights from the match between..."
+        />
+        <CarouselItem
+          imagePath={require('../../../assets/images/dashboard/thumb-01.png')}
+          title="Brazil vs Argentina"
+          text="Watch the highlights from the match between..."
+        />
       </DashboardCarousel>
       <DashboardCarousel title="All leagues" linkText="View all">
-        <View style={{width: 80, marginEnd: 20}}>
-          <View
-            style={{
-              backgroundColor: APP_COLORS.gray30,
-              width: 80,
-              height: 80,
-              justifyContent: 'center',
-              alignItems: 'center',
-            }}>
-            <Image
-              source={require('../../../assets/images/teams/premiere-lion.png')}
-            />
-          </View>
-          <ManropeText
-            text="Premiere League"
-            fontSize={12}
-            style={{textAlign: 'center'}}
-          />
-        </View>
-        <View style={{width: 80, marginEnd: 20}}>
-          <View
-            style={{
-              backgroundColor: APP_COLORS.gray30,
-              width: 80,
-              height: 80,
-              justifyContent: 'center',
-              alignItems: 'center',
-            }}>
-            <Image
-              source={require('../../../assets/images/teams/brazil-league.png')}
-            />
-          </View>
-          <ManropeText
-            text="Premiere League"
-            fontSize={12}
-            style={{textAlign: 'center'}}
-          />
-        </View>
-        <View style={{width: 80, marginEnd: 20}}>
-          <View
-            style={{
-              backgroundColor: APP_COLORS.gray30,
-              width: 80,
-              height: 80,
-              justifyContent: 'center',
-              alignItems: 'center',
-            }}>
-            <Image
-              source={require('../../../assets/images/teams/premiere-lion.png')}
-            />
-          </View>
-          <ManropeText
-            text="Premiere League"
-            fontSize={12}
-            style={{textAlign: 'center'}}
-          />
-        </View>
-        <View style={{width: 80, marginEnd: 20}}>
-          <View
-            style={{
-              backgroundColor: APP_COLORS.gray30,
-              width: 80,
-              height: 80,
-              justifyContent: 'center',
-              alignItems: 'center',
-            }}>
-            <Image
-              source={require('../../../assets/images/teams/brazil-league.png')}
-            />
-          </View>
-          <ManropeText
-            text="Premiere League"
-            fontSize={12}
-            style={{textAlign: 'center'}}
-          />
-        </View>
-        <View style={{width: 80, marginEnd: 20}}>
-          <View
-            style={{
-              backgroundColor: APP_COLORS.gray30,
-              width: 80,
-              height: 80,
-              justifyContent: 'center',
-              alignItems: 'center',
-            }}>
-            <Image
-              source={require('../../../assets/images/teams/premiere-lion.png')}
-            />
-          </View>
-          <ManropeText
-            text="Premiere League"
-            fontSize={12}
-            style={{textAlign: 'center'}}
-          />
-        </View>
-        <View style={{width: 80, marginEnd: 20}}>
-          <View
-            style={{
-              backgroundColor: APP_COLORS.gray30,
-              width: 80,
-              height: 80,
-              justifyContent: 'center',
-              alignItems: 'center',
-            }}>
-            <Image
-              source={require('../../../assets/images/teams/brazil-league.png')}
-            />
-          </View>
-          <ManropeText
-            text="Premiere League"
-            fontSize={12}
-            style={{textAlign: 'center'}}
-          />
-        </View>
-        <View style={{width: 80, marginEnd: 20}}>
-          <View
-            style={{
-              backgroundColor: APP_COLORS.gray30,
-              width: 80,
-              height: 80,
-              justifyContent: 'center',
-              alignItems: 'center',
-            }}>
-            <Image
-              source={require('../../../assets/images/teams/premiere-lion.png')}
-            />
-          </View>
-          <ManropeText
-            text="Premiere League"
-            fontSize={12}
-            style={{textAlign: 'center'}}
-          />
-        </View>
-        <View style={{width: 80, marginEnd: 20}}>
-          <View
-            style={{
-              backgroundColor: APP_COLORS.gray30,
-              width: 80,
-              height: 80,
-              justifyContent: 'center',
-              alignItems: 'center',
-            }}>
-            <Image
-              source={require('../../../assets/images/teams/brazil-league.png')}
-            />
-          </View>
-          <ManropeText
-            text="Premiere League"
-            fontSize={12}
-            style={{textAlign: 'center'}}
-          />
-        </View>
+        <LeagueCarouselItem
+          imagePath={require('../../../assets/images/teams/premiere-lion.png')}
+          text="Premiere League"
+        />
+
+        <LeagueCarouselItem
+          imagePath={require('../../../assets/images/teams/brazil-league.png')}
+          text="Brazil League"
+        />
+        <LeagueCarouselItem
+          imagePath={require('../../../assets/images/teams/premiere-lion.png')}
+          text="Premiere League"
+        />
+
+        <LeagueCarouselItem
+          imagePath={require('../../../assets/images/teams/brazil-league.png')}
+          text="Brazil League"
+        />
+        <LeagueCarouselItem
+          imagePath={require('../../../assets/images/teams/premiere-lion.png')}
+          text="Premiere League"
+        />
+
+        <LeagueCarouselItem
+          imagePath={require('../../../assets/images/teams/brazil-league.png')}
+          text="Brazil League"
+        />
       </DashboardCarousel>
-      <View style={{height: 50}} />
+      <View style={{height: 80}} />
     </ScrollView>
   );
 };
+
+const styles = StyleSheet.create({
+  mainContainer: {
+    backgroundColor: APP_COLORS.smoke,
+  },
+  headerWrapper: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    paddingBottom: 0,
+    ...APP_STYLES.globalHorizontalPadding,
+  },
+  searchWrapper: {
+    paddingVertical: 0,
+    marginTop: 10,
+    ...APP_STYLES.globalHorizontalPadding,
+  },
+  searchInputContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    alignContent: 'center',
+    paddingHorizontal: 20,
+    backgroundColor: APP_COLORS.gray15,
+  },
+  searchInput: {backgroundColor: APP_COLORS.gray15, marginStart: 20},
+});

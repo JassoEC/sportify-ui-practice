@@ -1,6 +1,7 @@
-import {ScrollView, StyleSheet, Text, View} from 'react-native';
-import {APP_COLORS, APP_STYLES} from '../../../config';
 import {PropsWithChildren} from 'react';
+import {ScrollView, StyleSheet, View} from 'react-native';
+
+import {APP_COLORS, APP_STYLES} from '../../../config';
 import {BebasNeueText} from '../ui/BebasNeueText';
 import {ManropeText} from '../ui/ManropeText';
 import {EvilIcon} from '../ui/EvilIcon';
@@ -12,22 +13,12 @@ interface Props extends PropsWithChildren {
 
 export const DashboardCarousel = ({children, title, linkText}: Props) => {
   return (
-    <>
+    <View style={styles.mainContainer}>
       {title && (
-        <View
-          style={[
-            APP_STYLES.globalPadding,
-            {
-              flexDirection: 'row',
-              justifyContent: 'space-between',
-              alignContent: 'center',
-              alignItems: 'center',
-              paddingBottom: 0,
-            },
-          ]}>
+        <View style={styles.titleWrapper}>
           {title && <BebasNeueText text={title} fontSize={22} />}
           {linkText && (
-            <View style={{flexDirection: 'row', alignItems: 'flex-end'}}>
+            <View style={styles.linkText}>
               <ManropeText text={linkText} fontSize={14} color="pinkMaybe" />
               <EvilIcon icon="chevron-right" size={30} color="pinkMaybe" />
             </View>
@@ -36,7 +27,7 @@ export const DashboardCarousel = ({children, title, linkText}: Props) => {
       )}
       <ScrollView
         showsHorizontalScrollIndicator={false}
-        style={[APP_STYLES.globalPadding, {paddingBottom: 0, marginTop: 0}]}
+        style={styles.contentScroll}
         horizontal>
         {children}
       </ScrollView>
@@ -47,11 +38,28 @@ export const DashboardCarousel = ({children, title, linkText}: Props) => {
         <View style={styles.indictor} />
         <View style={styles.indictor} />
       </View>
-    </>
+    </View>
   );
 };
 
 const styles = StyleSheet.create({
+  mainContainer: {
+    paddingVertical: 10,
+  },
+  titleWrapper: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignContent: 'center',
+    alignItems: 'center',
+    marginVertical: 10,
+    ...APP_STYLES.globalHorizontalPadding,
+  },
+  linkText: {flexDirection: 'row', alignItems: 'flex-end'},
+  contentScroll: {
+    paddingBottom: 0,
+    marginTop: 0,
+    ...APP_STYLES.globalHorizontalPadding,
+  },
   indicatorContainer: {
     flexDirection: 'row',
     justifyContent: 'center',

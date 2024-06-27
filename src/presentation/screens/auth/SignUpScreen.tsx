@@ -20,7 +20,10 @@ export const SignUpScreen = ({}: Props) => {
     <WithHeaderScreenWrapper
       textHeader="Create your Sportify Id"
       textSubHeader="Get news,game updates highlights and more info on your favorite teams"
-      backgroundText="JOIN">
+      backgroundText="JOIN"
+      style={{
+        paddingBottom: 20,
+      }}>
       <AppTextInput placeholder="First Name" />
       <AppTextInput placeholder="Last Name" />
 

@@ -22,7 +22,9 @@ export const SignInScreen = ({}: Props) => {
   return (
     <WithHeaderScreenWrapper
       textHeader="SIGN IN WITH YOUR SPORTIFY ID"
-      backgroundText="SignIN">
+      backgroundText="sign in"
+      textHeaderFontSize={30}
+      style={{paddingBottom: 10, height: 270}}>
       <AppTextInput placeholder="Email" keyboardType="email-address" />
       <AppTextInput placeholder="Password" secureEntry />
 

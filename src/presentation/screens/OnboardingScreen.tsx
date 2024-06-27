@@ -20,7 +20,10 @@ export const OnboardingScreen = ({}: Props) => {
     <>
       <Image
         source={require('../../assets/images/auth/login/garota-1-2048x2048.png')}
-        style={{width: '100%', position: 'absolute'}}
+        style={{
+          width: '100%',
+          position: 'absolute',
+        }}
       />
 
       <Image
@@ -28,12 +31,9 @@ export const OnboardingScreen = ({}: Props) => {
         resizeMode="center"
         style={{
           resizeMode: 'contain',
-          height: '58%',
-          width: '58%',
           position: 'absolute',
           zIndex: -1,
           alignSelf: 'flex-end',
-          right: -5,
         }}
       />
 

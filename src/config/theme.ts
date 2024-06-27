@@ -23,11 +23,14 @@ export const APP_STYLES = StyleSheet.create({
   appFontBebasNeue: {
     fontFamily: 'BebasNeue-Regular',
   },
-  appFontMarope: {
+  appFontManrope: {
     fontFamily: 'Manrope-Regular',
   },
-  globalPadding: {
-    padding: 20,
+  globalVerticalMargin: {
+    marginVertical: 10,
+  },
+  globalHorizontalPadding: {
+    paddingHorizontal: 20,
   },
   mainContainer: {
     flex: 1,
