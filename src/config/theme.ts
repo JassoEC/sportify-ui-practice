@@ -8,6 +8,7 @@ export enum APP_COLORS {
   gray10 = '#FFF',
   gray15 = '#F4F4F4',
   gray20 = '#D6D5D5',
+  gray30 = '#EEEDED',
   gray40 = '#ADABAB',
   gray60 = '#848181',
   gray80 = '#5B5757',

@@ -7,6 +7,7 @@ import {
   ManropeText,
   PinkButton,
   GrayButton,
+  ColorizedLogo,
 } from '../components';
 import {SportifyStackParamList} from '../navigation';
 
@@ -43,11 +44,7 @@ export const OnboardingScreen = ({}: Props) => {
           justifyContent: 'space-between',
         }}>
         <View style={{backgroundColor: 'transparent', width: 180}}>
-          <Image
-            source={require('../../assets/images/auth/login/top-logo-colorized.png')}
-            style={{width: 140}}
-            resizeMode="contain"
-          />
+          <ColorizedLogo />
         </View>
         <View style={{paddingBottom: 20, backgroundColor: 'transparent'}}>
           <BebasNeueText

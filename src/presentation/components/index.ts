@@ -4,6 +4,7 @@ export * from './custom/bottomStackNavigation/CustomTabBarIcon';
 
 export * from './shared/WithHeaderScreenWrapper';
 export * from './shared/MainContainer';
+export * from './shared/ColorizedLogo';
 
 export * from './ui/BaseButton';
 export * from './ui/BlackButton';
@@ -20,3 +21,5 @@ export * from './ui/EvilIcon';
 
 export * from './navigation/BottomTabBarIcon';
 export * from './navigation/CustomTabBar';
+
+export * from './dashboard/DashboardCarousel';

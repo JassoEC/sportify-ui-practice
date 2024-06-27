@@ -14,6 +14,7 @@ interface Props {
   style?: StyleProp<ViewStyle>;
   icon?: string;
   iconSize?: number;
+  height?: number;
 }
 
 export const SmallButton = ({
@@ -27,13 +28,13 @@ export const SmallButton = ({
   style,
   icon,
   iconSize = 18,
+  height = 36,
 }: Props) => {
   const handleOnPress = () => {
     if (!onPress) return;
     onPress();
   };
 
-  const height = 36;
   const borderWidth = height / 2;
 
   return (

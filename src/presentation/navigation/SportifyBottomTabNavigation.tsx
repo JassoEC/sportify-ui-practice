@@ -3,6 +3,7 @@ import {Text, View} from 'react-native';
 
 import {BottomTabBarIcon} from '../components';
 import {ProfileStackNavigation} from './ProfileStackNavigation';
+import {DashboardStackNavigation} from './DashboardStackNavigation';
 
 const Tab = createBottomTabNavigator();
 
@@ -17,14 +18,14 @@ const SampleScreen = () => {
 export const SportifyBottomTabsNavigation = () => {
   return (
     <Tab.Navigator
-      initialRouteName="ProfileSection"
+      initialRouteName="Dashboard"
       screenOptions={{
         headerShown: false,
         tabBarShowLabel: false,
       }}>
       <Tab.Screen
-        name="News"
-        component={SampleScreen}
+        name="Dashboard"
+        component={DashboardStackNavigation}
         options={{
           tabBarIcon: ({focused}) => (
             <BottomTabBarIcon icon="home" focused={focused} />

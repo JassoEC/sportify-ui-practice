@@ -5,7 +5,7 @@ import {APP_STYLES} from '../../../config';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
 
 interface Props extends PropsWithChildren {
-  style: StyleProp<ViewStyle>;
+  style?: StyleProp<ViewStyle>;
   safeArea?: boolean;
 }
 
