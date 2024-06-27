@@ -1,3 +1,4 @@
+import {useState} from 'react';
 import {Platform, Pressable, ScrollView, StyleSheet, View} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
@@ -10,7 +11,6 @@ import {
   MaterialIcon,
 } from '../../components';
 import {NotificationItem} from '../../components/profile';
-import {useState} from 'react';
 
 interface Props {}
 
