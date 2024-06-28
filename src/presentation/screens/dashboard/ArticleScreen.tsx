@@ -1,4 +1,5 @@
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
+import {useNavigation} from '@react-navigation/native';
 
 import {
   Image,
@@ -19,6 +20,8 @@ interface Props {}
 export const ArticleScreen = ({}: Props) => {
   const {width} = useWindowDimensions();
   const {top} = useSafeAreaInsets();
+
+  const navigation = useNavigation();
   return (
     <View style={styles.mainContainer}>
       <View
@@ -27,6 +30,7 @@ export const ArticleScreen = ({}: Props) => {
           marginTop: Platform.OS === 'ios' ? top : top + 15,
         }}>
         <Pressable
+          onPress={() => navigation.goBack()}
           style={({pressed}) => ({
             opacity: pressed ? 0.5 : 1,
           })}>
