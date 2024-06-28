@@ -1,4 +1,4 @@
-import {Platform, Text, View} from 'react-native';
+import {Text, View} from 'react-native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
 
@@ -24,20 +24,20 @@ export const SportifyBottomTabsNavigation = () => {
       screenOptions={{
         headerShown: false,
         tabBarShowLabel: false,
+        tabBarStyle: {
+          position: 'absolute',
+          bottom: bottom + 20,
+          elevation: 0,
+          height: 48,
+          backgroundColor: 'transparent',
+          paddingHorizontal: 20,
+          borderTopWidth: 0,
+        },
       }}>
       <Tab.Screen
         name="Dashboard"
         component={DashboardStackNavigation}
         options={{
-          tabBarStyle: {
-            position: 'absolute',
-            bottom: 30,
-            elevation: 0,
-            height: 48,
-            backgroundColor: 'transparent',
-            paddingHorizontal: 20,
-            borderTopWidth: 0,
-          },
           tabBarIcon: ({focused}) => (
             <BottomTabBarIcon icon="home" focused={focused} />
           ),
@@ -48,15 +48,6 @@ export const SportifyBottomTabsNavigation = () => {
         name="Home"
         component={SampleScreen}
         options={{
-          tabBarStyle: {
-            position: 'absolute',
-            bottom: 30,
-            elevation: 0,
-            height: 48,
-            backgroundColor: 'transparent',
-            paddingHorizontal: 20,
-            borderTopWidth: 0,
-          },
           tabBarIcon: ({focused}) => (
             <BottomTabBarIcon icon="sticky-note-2" focused={focused} />
           ),
@@ -67,15 +58,6 @@ export const SportifyBottomTabsNavigation = () => {
         name="Highlights"
         component={SampleScreen}
         options={{
-          tabBarStyle: {
-            position: 'absolute',
-            bottom: 30,
-            elevation: 0,
-            height: 48,
-            backgroundColor: 'transparent',
-            paddingHorizontal: 20,
-            borderTopWidth: 0,
-          },
           tabBarIcon: ({focused}) => (
             <BottomTabBarIcon icon="video-library" focused={focused} />
           ),
@@ -86,15 +68,6 @@ export const SportifyBottomTabsNavigation = () => {
         name="ProfileSection"
         component={ProfileStackNavigation}
         options={{
-          tabBarStyle: {
-            position: 'absolute',
-            bottom: 30,
-            elevation: 0,
-            height: 48,
-            backgroundColor: 'transparent',
-            paddingHorizontal: 20,
-            borderTopWidth: 0,
-          },
           tabBarIcon: ({focused}) => (
             <BottomTabBarIcon icon="person" focused={focused} />
           ),

@@ -1,5 +1,5 @@
 import {NavigationProp, useNavigation} from '@react-navigation/native';
-import {ScrollView, StyleSheet, View} from 'react-native';
+import {Platform, ScrollView, StyleSheet, View} from 'react-native';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
 
 import {
@@ -27,8 +27,14 @@ export const DashboardHomeScreen = ({}: Props) => {
   };
 
   return (
-    <ScrollView style={styles.mainContainer}>
-      <View style={{...styles.headerWrapper, marginTop: top}}>
+    <ScrollView
+      style={styles.mainContainer}
+      showsVerticalScrollIndicator={false}>
+      <View
+        style={{
+          ...styles.headerWrapper,
+          marginTop: Platform.OS === 'ios' ? top + 15 : 10,
+        }}>
         <ColorizedLogo />
         <MaterialIcon icon="notifications" size={30} color="black" />
       </View>
