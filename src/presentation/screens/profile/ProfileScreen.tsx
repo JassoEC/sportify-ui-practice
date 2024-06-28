@@ -33,7 +33,7 @@ export const ProfileScreen = ({}: Props) => {
           }}
         />
       }>
-      <ScrollView>
+      <ScrollView showsVerticalScrollIndicator={false}>
         <ProfileWithTitleButton
           text="My Teams"
           secondText="Follow your favorite teams for personalized content and recommendations."
@@ -71,6 +71,7 @@ export const ProfileScreen = ({}: Props) => {
           fontSize={20}
           style={{marginBottom: 30}}
         />
+        <View style={{height: 80}} />
       </ScrollView>
     </WithHeaderScreenWrapper>
   );

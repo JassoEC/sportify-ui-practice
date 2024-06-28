@@ -8,3 +8,4 @@ export * from './profile/PlayersScreen';
 export * from './profile/NotificationsScreen';
 
 export * from './dashboard/DashboardHomeScreen';
+export * from './dashboard/ArticleScreen';

@@ -45,8 +45,9 @@ export const PlayersScreen = ({}: Props) => {
       textSubHeader="Get news,game updates highlights and more info on your favorite players"
       backgroundText="Players"
       showBackButton
-      contentPadding={false}>
-      <ScrollView style={{backgroundColor: APP_COLORS.gray10}}>
+      contentPadding={false}
+      style={{paddingBottom: 15, height: 279}}>
+      <ScrollView style={{backgroundColor: APP_COLORS.smoke}}>
         {teams.map((team, index) => (
           <PlayerFollowItem
             imagePath={team.image}
@@ -58,7 +59,7 @@ export const PlayersScreen = ({}: Props) => {
             key={`index-${team.name}-${index}`}
           />
         ))}
-        <View style={{height: 300}} />
+        <View style={{height: 150}} />
       </ScrollView>
     </WithHeaderScreenWrapper>
   );

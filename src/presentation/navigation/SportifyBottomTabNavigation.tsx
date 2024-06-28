@@ -36,6 +36,7 @@ export const SportifyBottomTabsNavigation = () => {
             height: 48,
             backgroundColor: 'transparent',
             paddingHorizontal: 20,
+            borderTopWidth: 0,
           },
           tabBarIcon: ({focused}) => (
             <BottomTabBarIcon icon="home" focused={focused} />
@@ -47,6 +48,15 @@ export const SportifyBottomTabsNavigation = () => {
         name="Home"
         component={SampleScreen}
         options={{
+          tabBarStyle: {
+            position: 'absolute',
+            bottom: 30,
+            elevation: 0,
+            height: 48,
+            backgroundColor: 'transparent',
+            paddingHorizontal: 20,
+            borderTopWidth: 0,
+          },
           tabBarIcon: ({focused}) => (
             <BottomTabBarIcon icon="sticky-note-2" focused={focused} />
           ),
@@ -57,6 +67,15 @@ export const SportifyBottomTabsNavigation = () => {
         name="Highlights"
         component={SampleScreen}
         options={{
+          tabBarStyle: {
+            position: 'absolute',
+            bottom: 30,
+            elevation: 0,
+            height: 48,
+            backgroundColor: 'transparent',
+            paddingHorizontal: 20,
+            borderTopWidth: 0,
+          },
           tabBarIcon: ({focused}) => (
             <BottomTabBarIcon icon="video-library" focused={focused} />
           ),
@@ -67,6 +86,15 @@ export const SportifyBottomTabsNavigation = () => {
         name="ProfileSection"
         component={ProfileStackNavigation}
         options={{
+          tabBarStyle: {
+            position: 'absolute',
+            bottom: 30,
+            elevation: 0,
+            height: 48,
+            backgroundColor: 'transparent',
+            paddingHorizontal: 20,
+            borderTopWidth: 0,
+          },
           tabBarIcon: ({focused}) => (
             <BottomTabBarIcon icon="person" focused={focused} />
           ),

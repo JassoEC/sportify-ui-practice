@@ -1,6 +1,6 @@
 import {createStackNavigator} from '@react-navigation/stack';
 
-import {DashboardHomeScreen} from '../screens';
+import {ArticleScreen, DashboardHomeScreen} from '../screens';
 
 interface Props {}
 
@@ -15,7 +15,7 @@ export const DashboardStackNavigation = ({}: Props) => {
   return (
     <Stack.Navigator screenOptions={{headerShown: false}}>
       <Stack.Screen name="Home" component={DashboardHomeScreen} />
-      {/* <Stack.Screen name="Article" component={SampleScreen} /> */}
+      <Stack.Screen name="Article" component={ArticleScreen} />
     </Stack.Navigator>
   );
 };

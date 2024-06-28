@@ -1,3 +1,4 @@
+import {NavigationProp, useNavigation} from '@react-navigation/native';
 import {ScrollView, StyleSheet, View} from 'react-native';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
 
@@ -12,11 +13,19 @@ import {
   MaterialIcon,
 } from '../../components';
 import {APP_COLORS, APP_STYLES} from '../../../config';
+import {DashboardStackParamList} from '../../navigation';
 
 interface Props {}
 
 export const DashboardHomeScreen = ({}: Props) => {
   const {top} = useSafeAreaInsets();
+
+  const navigation = useNavigation<NavigationProp<DashboardStackParamList>>();
+
+  const handleNavigateToArticle = () => {
+    navigation.navigate('Article');
+  };
+
   return (
     <ScrollView style={styles.mainContainer}>
       <View style={{...styles.headerWrapper, marginTop: top}}>
@@ -48,12 +57,15 @@ export const DashboardHomeScreen = ({}: Props) => {
       <DashboardCarousel>
         <ImageCarouselItem
           imagePath={require('../../../assets/images/dashboard/01.png')}
+          onPress={handleNavigateToArticle}
         />
         <ImageCarouselItem
           imagePath={require('../../../assets/images/dashboard/01.png')}
+          onPress={handleNavigateToArticle}
         />
         <ImageCarouselItem
           imagePath={require('../../../assets/images/dashboard/01.png')}
+          onPress={handleNavigateToArticle}
           addMarginEnd
         />
       </DashboardCarousel>

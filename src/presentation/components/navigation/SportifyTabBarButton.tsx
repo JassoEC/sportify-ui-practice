@@ -15,7 +15,7 @@ export const SportifyTabBarButton = ({
   onPress,
 }: Props) => {
   const height = 48;
-  const borderWidth = height / 2 + 1;
+  const borderWidth = height / 2;
   const backgroundColor = APP_COLORS.gray10;
   return (
     <>
@@ -24,7 +24,7 @@ export const SportifyTabBarButton = ({
           style={{
             width: 0,
             height: 0,
-            borderRightWidth: 12,
+            borderRightWidth: 13,
             borderTopWidth: borderWidth,
             borderBottomWidth: borderWidth,
             borderTopColor: 'transparent',
@@ -44,7 +44,7 @@ export const SportifyTabBarButton = ({
           style={{
             width: 0,
             height: 0,
-            borderLeftWidth: 12,
+            borderLeftWidth: 13,
             borderTopWidth: borderWidth,
             borderBottomWidth: borderWidth,
             borderTopColor: 'transparent',

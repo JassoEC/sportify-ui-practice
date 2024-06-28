@@ -30,8 +30,9 @@ export const TeamsScreen = ({}: Props) => {
       textSubHeader="Get news,game updates highlights and more info on your favorite teams"
       backgroundText="TEAMS"
       showBackButton
-      contentPadding={false}>
-      <ScrollView style={{backgroundColor: APP_COLORS.gray10}}>
+      contentPadding={false}
+      style={{paddingBottom: 15, height: 279}}>
+      <ScrollView style={{backgroundColor: APP_COLORS.smoke}}>
         {teams.map((team, index) => (
           <TeamFollowItem
             imagePath={team.image}

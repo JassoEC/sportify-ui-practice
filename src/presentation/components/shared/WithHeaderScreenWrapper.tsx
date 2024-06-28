@@ -117,7 +117,11 @@ export const WithHeaderScreenWrapper = ({
           />
         )}
       </View>
-      <View style={[contentPadding ? styles.contentContainer : null]}>
+      <View
+        style={[
+          {backgroundColor: APP_COLORS.smoke},
+          contentPadding ? styles.contentContainer : null,
+        ]}>
         {children}
       </View>
     </View>
@@ -138,7 +142,6 @@ const styles = StyleSheet.create({
   },
   contentContainer: {
     flex: 1,
-    backgroundColor: APP_COLORS.smoke,
     ...APP_STYLES.globalHorizontalPadding,
     paddingVertical: 20,
   },
